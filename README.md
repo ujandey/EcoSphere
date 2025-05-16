@@ -1,85 +1,67 @@
-# 🌍 EcoScore - Your Path to Sustainable Living
+# 🌍 EcoScore: Your Personalized Path to Sustainable Living
 
-EcoScore is a modern web application that helps users track and improve their environmental impact through an engaging, gamified experience. Built with Next.js 15 and Supabase, it combines personalized sustainability tracking with social features to make environmental consciousness both fun and actionable.
+**EcoScore** is a web app that empowers users to understand and reduce their environmental footprint through a fun, gamified experience.  
+Built for a hackathon, it combines a carbon footprint quiz, personalized recommendations, and a competitive league system inspired by *Duolingo* and *Chess.com* to make sustainability engaging and actionable.
 
-## ✨ Features
+**🌐 Website is live at: [https://ecoscoretrack.vercel.app](https://ecoscoretrack.vercel.app)**
 
-- **🎯 Personalized Dashboard**
-  - Track your environmental impact score
-  - Visualize your progress with interactive charts
-  - Get tailored recommendations for improvement
+---
 
-- **🎮 Gamification Elements**  
-  - Earn achievements for eco-friendly actions
-  - Compete on leaderboards
-  - Progress through different sustainability tiers
+## 🚨 Problem
 
-- **📱 Responsive Design**
-  - Fully responsive UI using Tailwind CSS
-  - Smooth animations with Framer Motion
-  - Accessible interface using Radix UI components
+Many want to live sustainably but struggle with:
+
+- ❓ Unknown environmental impact  
+- 😵 Overwhelming or vague advice  
+- 🤝 Lack of connection to local eco-communities
+
+---
+
+## ✅ Solution
+
+**EcoScore delivers:**
+
+- ⚡ A quick quiz to calculate your EcoScore (0–100)  
+- 🎯 Tailored, high-impact recommendations  
+- 📊 A vibrant dashboard with charts and progress tracking  
+- 🏆 A league system (Bronze, Silver, Gold) with a leaderboard to compete against mock players  
+- 🎮 Gamified elements: badges, trend indicators, eco-avatars, and milestone celebrations
+
+---
+
+## 🌟 Features
+
+- **Carbon Footprint Quiz**  
+  5 questions (transport, food, energy, flights, waste) to compute your EcoScore
+
+- **Visual Dashboard**  
+  Pie chart of impact areas, progress bar, and badge gallery
+
+- **Personalized Recommendations**  
+  Actionable tips (e.g., *“Switch to LEDs”*) with CO₂ savings on hover
+
+- **League System**  
+  Rank in Bronze, Silver, or Gold tiers, compete on a leaderboard, and earn rank-up animations
+
+- **Gamification**  
+  Badges for completed actions, trend indicators, evolving eco-avatars, quick tip pop-ups, and a mock social sharing feature
+
+- **Responsive UI**  
+  Mobile-first design with Tailwind CSS and Framer Motion animations
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: [Next.js](https://nextjs.org/) 15.2, React 19, TypeScript
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/), [Radix UI](https://www.radix-ui.com/)
-- **Authentication**: [Supabase Auth](https://supabase.com/auth)
-- **Database**: [Supabase](https://supabase.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Frontend:** React, Tailwind CSS, Framer Motion (animations), Chart.js (visuals)  
+- **Data:** Static JSON for quiz, recommendations, and mock leaderboard  
+- **Storage:** `localStorage` for EcoScore, badges, and league progress  
+- **Dependencies:** CDN-hosted for speed (React, Tailwind, Chart.js, Framer Motion, Font Awesome)
 
-## 🚀 Getting Started
+---
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/ecosphere.git
-cd ecosphere
-```
+## ⚙️ Setup
 
-2. Install dependencies:
-```bash
-pnpm install
-```
-
-3. Set up environment variables:
-```bash
-cp .env.example .env.local
-```
-Fill in your Supabase credentials in `.env.local`
-
-4. Run the development server:
-```bash
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the application.
-
-## 🔧 Environment Variables
-
-Create a `.env.local` file with the following variables:
-```
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
-## 📦 Build
-
-To create a production build:
-
-```bash
-pnpm build
-pnpm start
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🌟 Acknowledgments
-
-- Design inspiration from Duolingo and Chess.com
-- Built with [shadcn/ui](https://ui.shadcn.com/) components
-- Icons from [Lucide](https://lucide.dev/)
+1. Clone the repo:  
+   ```bash
+   git clone <repo-url>
