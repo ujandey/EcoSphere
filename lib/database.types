@@ -1,0 +1,286 @@
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
+
+export interface Database {
+  public: {
+    Tables: {
+      user_profiles: {
+        Row: {
+          id: string;
+          full_name: string | null;
+          location: string | null;
+          bio: string | null;
+          avatar_url: string | null;
+          measurement_preference: string;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id: string;
+          full_name?: string | null;
+          location?: string | null;
+          bio?: string | null;
+          avatar_url?: string | null;
+          measurement_preference?: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          full_name?: string | null;
+          location?: string | null;
+          bio?: string | null;
+          avatar_url?: string | null;
+          measurement_preference?: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      carbon_footprints: {
+        Row: {
+          id: string;
+          user_id: string;
+          total_footprint: number;
+          transportation: number | null;
+          home_energy: number | null;
+          food: number | null;
+          consumption: number | null;
+          travel: number | null;
+          date: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          total_footprint: number;
+          transportation?: number | null;
+          home_energy?: number | null;
+          food?: number | null;
+          consumption?: number | null;
+          travel?: number | null;
+          date?: string;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          total_footprint?: number;
+          transportation?: number | null;
+          home_energy?: number | null;
+          food?: number | null;
+          consumption?: number | null;
+          travel?: number | null;
+          date?: string;
+          created_at?: string;
+        };
+      };
+      user_preferences: {
+        Row: {
+          user_id: string;
+          dark_mode: boolean;
+          compact_view: boolean;
+          public_profile: boolean;
+          weekly_summary_notifications: boolean;
+          achievement_notifications: boolean;
+          community_notifications: boolean;
+          tips_notifications: boolean;
+          updated_at: string;
+        };
+        Insert: {
+          user_id: string;
+          dark_mode?: boolean;
+          compact_view?: boolean;
+          public_profile?: boolean;
+          weekly_summary_notifications?: boolean;
+          achievement_notifications?: boolean;
+          community_notifications?: boolean;
+          tips_notifications?: boolean;
+          updated_at?: string;
+        };
+        Update: {
+          user_id?: string;
+          dark_mode?: boolean;
+          compact_view?: boolean;
+          public_profile?: boolean;
+          weekly_summary_notifications?: boolean;
+          achievement_notifications?: boolean;
+          community_notifications?: boolean;
+          tips_notifications?: boolean;
+          updated_at?: string;
+        };
+      };
+      user_achievements: {
+        Row: {
+          id: string;
+          user_id: string;
+          achievement_id: string;
+          earned_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          achievement_id: string;
+          earned_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          achievement_id?: string;
+          earned_at?: string;
+        };
+      };
+      user_gamification: {
+        Row: {
+          user_id: string
+          points: number
+          level: number
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          user_id: string
+          points?: number
+          level?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          user_id?: string
+          points?: number
+          level?: number
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      challenges: {
+        Row: {
+          id: string
+          title: string
+          description: string
+          category: string
+          difficulty: string
+          points: number
+          duration: string
+          created_at: string
+          active: boolean
+        }
+        Insert: {
+          id?: string
+          title: string
+          description: string
+          category: string
+          difficulty: string
+          points: number
+          duration: string
+          created_at?: string
+          active?: boolean
+        }
+        Update: {
+          id?: string
+          title?: string
+          description?: string
+          category?: string
+          difficulty?: string
+          points?: number
+          duration?: string
+          created_at?: string
+          active?: boolean
+        }
+      }
+      challenge_tasks: {
+        Row: {
+          id: string
+          challenge_id: string
+          description: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          challenge_id: string
+          description: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          challenge_id?: string
+          description?: string
+          created_at?: string
+        }
+      }
+      user_challenges: {
+        Row: {
+          id: string
+          user_id: string
+          challenge_id: string
+          status: string
+          progress: number
+          joined_at: string
+          completed_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          challenge_id: string
+          status: string
+          progress?: number
+          joined_at?: string
+          completed_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          challenge_id?: string
+          status?: string
+          progress?: number
+          joined_at?: string
+          completed_at?: string | null
+        }
+      }
+      user_challenge_tasks: {
+        Row: {
+          id: string
+          user_challenge_id: string
+          task_id: string
+          completed: boolean
+          completed_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_challenge_id: string
+          task_id: string
+          completed?: boolean
+          completed_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_challenge_id?: string
+          task_id?: string
+          completed?: boolean
+          completed_at?: string | null
+        }
+      }
+      ai_conversations: {
+        Row: {
+          id: string
+          user_id: string
+          messages: Json[]
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          messages: Json[]
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          messages?: Json[]
+          created_at?: string
+          updated_at?: string
+        }
+      }
+    }
+  };
+}
